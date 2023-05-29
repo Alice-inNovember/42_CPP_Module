@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 10:28:41 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/26 10:46:41 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/29 13:20:47 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ class PhoneBook
 	public:
 	PhoneBook();
 	int			get_idx();
-	void		add_contact(std::string name, std::string number);
-	std::string	find_name(std::string number);
-	std::string	find_number(std::string name);
+	void	add_contact(std::string first_name, std::string last_name, std::string nick_name, std::string number, std::string secret);
+	Contact	*find_contact(int idx);
 };
 
 #endif
