@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 10:56:13 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/29 15:08:18 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/29 15:55:30 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ std::string	get_input(std::string say)
 	std::string input;
 
 	while(1)
+	
 	{
 		std::cout << std::endl;
 		std::cout << say << " : ";
@@ -117,7 +118,7 @@ void	search(PhoneBook *phonebook)
 			return;
 		else if(input > 0 && input <= 8)
 		{
-			print_contact(phonebook->find_contact(input));
+			print_contact(phonebook->find_contact(input - 1));
 			std::cout << std::endl;
 			continue;
 		}
