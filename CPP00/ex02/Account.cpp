@@ -1,8 +1,6 @@
 // Copyright @bigpel66
 
 #include "Account.hpp"
-#include <ctime>
-#include <iomanip>
 #include <iostream>
 
 int Account::_nbAccounts = 0;
@@ -11,9 +9,9 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 //함수호출 후 바로 스트림에 << 로 출력할 수 있음.
-static std::ostream& _summary(int index, int amount, bool prev)
+static std::ostream& _summary(int idx, int amount, bool is_prev)
 {
-    return std::cout << "index:" << index << (prev ? ";p_amount:" : ";amount:") << amount;
+    return std::cout << "index:" << idx << (is_prev ? ";p_amount:" : ";amount:") << amount;
 }
 
 //각 프라이빗 변수들을 반환하여주는 함수들

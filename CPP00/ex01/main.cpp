@@ -6,12 +6,10 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 10:56:13 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/29 15:55:30 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/06/11 21:40:31 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <algorithm>
-#include <ios>
 #include <iostream>
 #include <string>
 #include "Contact.hpp"
@@ -22,7 +20,6 @@ std::string	get_input(std::string say)
 	std::string input;
 
 	while(1)
-	
 	{
 		std::cout << std::endl;
 		std::cout << say << " : ";
@@ -68,17 +65,16 @@ void	printer(const std::string &str)
 	}
 }
 
-void	print_contact_idx(Contact *contact)
+void	print_contact_idx(Contact *contact, int idx)
 {
+	std::cout.width(10);
+	std::cout << std::right << idx + 1;
+	std::cout << "|";
 	printer(contact->get_first_name());
 	std::cout << "|";
 	printer(contact->get_last_name());
 	std::cout << "|";
 	printer(contact->get_nick_name());
-	std::cout << "|";
-	printer(contact->get_number());
-	std::cout << "|";
-	printer(contact->get_secret());
 	std::cout << std::endl;
 }
 
@@ -97,7 +93,7 @@ void	search(PhoneBook *phonebook)
 
 	std::cout << std::endl;
 	for (int i = 0; i < 8; i++)
-		print_contact_idx(phonebook->find_contact(i));
+		print_contact_idx(phonebook->find_contact(i), i);
 	while(true)
 	{
 		std::cout << "===================" << std::endl;
@@ -105,9 +101,9 @@ void	search(PhoneBook *phonebook)
 		std::cout << "[1 ~ 8]\tinfo" << std::endl;
 		std::cout << "===================" << std::endl;
 		std::cout << "input : ";
-		std::cin >> input;
 		if(std::cin.fail())
 		{
+			
 			std::cin.clear();
 			std::cin.ignore();
 			std::cout << "You have entered wrong input" << std::endl;
@@ -138,7 +134,8 @@ void	Menu(PhoneBook *phonebook)
 		std::cout << "EXIT" << std::endl;
 		std::cout << "===================" << std::endl;
 		std::cout << "input : ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+			return;
 		if(std::cin.fail())
 		{
 			std::cin.clear();
