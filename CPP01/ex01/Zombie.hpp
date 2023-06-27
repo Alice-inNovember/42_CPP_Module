@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:05:25 by junlee2           #+#    #+#             */
-/*   Updated: 2023/06/09 16:34:32 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/06/11 20:44:14 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,18 @@ class Zombie
 {
 	private:
 	std::string name;
+	int _idx;
+
+	static int idx;
 
 	public:
+	void	setname(std::string);
 	void	announce(void);
 
-	Zombie(std::string name);
+	Zombie();
 	~Zombie();
 };
 
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
 #endif
