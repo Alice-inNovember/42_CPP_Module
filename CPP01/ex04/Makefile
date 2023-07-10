@@ -1,5 +1,5 @@
 #NAME------------------------------------------------------
-NAME				=	ex03
+NAME				=	ex04
 #CMDS------------------------------------------------------
 CC					=	c++
 RM					=	rm -rf
@@ -10,10 +10,7 @@ CFLAGS				=	-Wall -Wextra -Werror
 D_LIBS			=	libs
 D_INCS			=	incs
 #FILES-----------------------------------------------------
-SRCS			=	main.cpp \
-					Weapon.cpp \
-					HumanA.cpp \
-					HumanB.cpp
+SRCS			=	main.cpp
 OBJS			=	$(SRCS:.c=.o)
 #COLOR-----------------------------------------------------
 C_OFF			=	"\033[0m"
@@ -35,7 +32,7 @@ $(NAME) : $(OBJS)
 	$(call P_STAT,$(C_BLE)Compiling)
 
 	@$(CC) $(CFLAGS) -o $@ $^
-	$(call P_STAT,$(C_PLE)ex03"         "✅)
+	$(call P_STAT,$(C_PLE)ex04"         "✅)
 
 	$(call P_STAT,$(C_GRN)Done!)
 #OBJS------------------------------------------------------
@@ -55,7 +52,7 @@ fclean : clean
 	$(call P_STAT,$(C_RED)Removing)
 
 	@$(RM) $(NAME)
-	$(call P_STAT,$(C_PLE)ex03"         "✅)
+	$(call P_STAT,$(C_PLE)ex04"         "✅)
 
 	$(call P_STAT,$(C_GRN)Done!)
 	$(info )
