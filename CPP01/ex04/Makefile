@@ -10,7 +10,8 @@ CFLAGS				=	-Wall -Wextra -Werror
 D_LIBS			=	libs
 D_INCS			=	incs
 #FILES-----------------------------------------------------
-SRCS			=	main.cpp
+SRCS			=	main.cpp\
+					FileStrReplace.cpp
 OBJS			=	$(SRCS:.c=.o)
 #COLOR-----------------------------------------------------
 C_OFF			=	"\033[0m"

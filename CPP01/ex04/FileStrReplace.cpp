@@ -6,12 +6,12 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:03:20 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/10 16:19:23 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/07/12 13:14:32 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FileStrReplace.hpp"
-#include <cstdlib>
+#include <iostream>
 
 FileStringReplace::FileStringReplace(std::string inFileName)
 {
@@ -37,8 +37,11 @@ void FileStringReplace::ReplaceStr(std::string outFileName, std::string toFind, 
 	this->toFind = toFind;
 	this->toChange = toChange;
 
-	while()
+	std::string::size_type pos;
+	pos = inFileText.find(toFind);
+
+	while(pos != std::string::npos)
 	{
-		
+		std::cout << pos;
 	}
 }
