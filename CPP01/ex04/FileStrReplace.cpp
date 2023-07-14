@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:03:20 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/12 13:14:32 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/07/14 15:32:37 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,29 @@ FileStringReplace::FileStringReplace(std::string inFileName)
 	inFile.seekg(0, std::ios::beg);
 	//읽기
 	inFile.read(&inFileText[0], inFileLen);
+	inFile.close();
 }
 
 void FileStringReplace::ReplaceStr(std::string outFileName, std::string toFind, std::string toChange)
 {
+	size_t		previous = 0;
+
 	this->outFileName = inFileName + outFileName;
 	this->toFind = toFind;
 	this->toChange = toChange;
 
+	outFile.open(this->outFileName, std::ios_base::out);
+	if (!outFile.is_open())
+		std::exit(EXIT_FAILURE);
 	std::string::size_type pos;
 	pos = inFileText.find(toFind);
-
 	while(pos != std::string::npos)
 	{
-		std::cout << pos;
+		outFile << inFileText.substr(previous, pos - previous);
+		outFile << toChange;
+		previous = pos + toFind.length();
+		pos = inFileText.find(toFind, previous);
 	}
+	outFile << inFileText.substr(previous, previous);
+	outFile.close();
 }

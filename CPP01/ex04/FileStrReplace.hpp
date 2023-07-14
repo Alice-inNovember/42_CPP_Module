@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:53:28 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/10 16:19:04 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/07/14 15:33:28 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class FileStringReplace
 {
 	private:
 	std::string		outFileName;
-	std::ifstream	outFile;
+	std::ofstream	outFile;
 	std::string		inFileName;
 	std::ifstream	inFile;
 	std::string		inFileText;
