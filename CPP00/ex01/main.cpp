@@ -6,12 +6,14 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 10:56:13 by junlee2           #+#    #+#             */
-/*   Updated: 2023/06/27 12:09:22 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/07/18 14:23:06 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdio>
 #include <iostream>
 #include <string>
+#include <iomanip>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
@@ -24,13 +26,14 @@ std::string	get_input(std::string say)
 		std::cout << std::endl;
 		std::cout << say << " : ";
 		std::getline(std::cin, input);
-		if(std::cin.fail())
+		if(std::cin.eof())
 		{
 			std::cin.clear();
+			std::clearerr(stdin);
 			std::cout << "You have entered wrong input" << std::endl;
+			continue;
 		}
-		if(!std::cin.fail())
-			break;
+		break;
 	}
 	return input;
 }
@@ -49,20 +52,11 @@ void	add(PhoneBook *phonebook)
 void	printer(const std::string &str)
 {
 	if(str.length() == 0)
-	{
-		std::cout.width(10);
-		std::cout << std::right << "None";
-	}
+		std::cout << std::setw(10) << std::right << "None";
 	else if(str.length() <= 10)
-	{
-		std::cout.width(10);
-		std::cout << std::right << str;
-	}
+		std::cout << std::setw(10) << std::right << str;
 	else
-	{
-		std::cout.width(9);
-		std::cout << std::right << str.substr(0, 9) << ".";
-	}
+		std::cout  << std::setw(9) << std::right << str.substr(0, 9) << ".";
 }
 
 void	print_contact_idx(Contact *contact, int idx)
@@ -101,12 +95,18 @@ void	search(PhoneBook *phonebook)
 		std::cout << "[1 ~ 8]\tinfo" << std::endl;
 		std::cout << "===================" << std::endl;
 		std::cout << "input : ";
+		std::cin >> input;
 		if(std::cin.fail())
 		{
-			
 			std::cin.clear();
 			std::cin.ignore();
 			std::cout << "You have entered wrong input" << std::endl;
+			continue;
+		}
+		else if (std::cin.eof())
+		{
+			std::cin.clear();
+			std::clearerr(stdin);
 			continue;
 		}
 		std::cin.ignore();
@@ -134,12 +134,11 @@ void	Menu(PhoneBook *phonebook)
 		std::cout << "EXIT" << std::endl;
 		std::cout << "===================" << std::endl;
 		std::cout << "input : ";
-		if (!std::getline(std::cin, input))
-			return;
-		if(std::cin.fail())
+		std::getline(std::cin, input);
+		if(std::cin.eof())
 		{
 			std::cin.clear();
-			std::cin.ignore();
+			std::clearerr(stdin);
 			std::cout << "You have entered wrong input" << std::endl;
 			continue;
 		}

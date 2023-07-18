@@ -1,5 +1,5 @@
 #NAME------------------------------------------------------
-NAME				=	BRAIN
+NAME				=	ex02
 #CMDS------------------------------------------------------
 CC					=	c++
 RM					=	rm -rf
@@ -32,7 +32,7 @@ $(NAME) : $(OBJS)
 	$(call P_STAT,$(C_BLE)Compiling)
 
 	@$(CC) $(CFLAGS) -o $@ $^
-	$(call P_STAT,$(C_PLE)BRAIN"        "✅)
+	$(call P_STAT,$(C_PLE)ex02"         "✅)
 
 	$(call P_STAT,$(C_GRN)Done!)
 #OBJS------------------------------------------------------
@@ -52,7 +52,7 @@ fclean : clean
 	$(call P_STAT,$(C_RED)Removing)
 
 	@$(RM) $(NAME)
-	$(call P_STAT,$(C_PLE)BRAIN"        "✅)
+	$(call P_STAT,$(C_PLE)ex02"         "✅)
 
 	$(call P_STAT,$(C_GRN)Done!)
 	$(info )

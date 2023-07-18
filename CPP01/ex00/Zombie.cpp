@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:28:17 by junlee2           #+#    #+#             */
-/*   Updated: 2023/06/09 16:59:27 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/07/14 15:59:22 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	Zombie::announce(void)
 {
-	std::cout << this->name << ": : BraiiiiiiinnnzzzZ.."<< std::endl;
+	std::cout << name << ": : BraiiiiiiinnnzzzZ.."<< std::endl;
 }
 
 Zombie::Zombie(std::string name)
