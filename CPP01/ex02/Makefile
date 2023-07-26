@@ -10,8 +10,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 D_LIBS	=	libs
 D_INCS	=	incs
 #FILES-----------------------------------------------------
-SRCS	=	main.cpp\
-			Fixed.cpp
+SRCS	=	main.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 #COLOR-----------------------------------------------------
 C_OFF	=	"\033[0m"

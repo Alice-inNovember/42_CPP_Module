@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42seoul.kr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:15:43 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/14 16:01:38 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/07/26 04:25:03 by codespace        ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int main()
 {
 	Zombie zombie01("junlee2");
 	Zombie *zombie02 = newZombie("tester");
-	Zombie *zombie03 = newZombie("tester2");
 
 	randomChump("aaaa");	
 	zombie01.announce();
