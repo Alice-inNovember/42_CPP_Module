@@ -50,13 +50,13 @@ int Fixed::toInt(void) const
 }
 
 //======================<연산자 오버로딩>======================
-Fixed& Fixed::operator=(Fixed const& rhs)
+Fixed& Fixed::operator=(Fixed const& obj)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 
-	if (this != &rhs)
+	if (this != &obj)
 	{
-		this->_value = rhs.getRawBits();
+		this->_value = obj.getRawBits();
 	}
 	return *this;
 }

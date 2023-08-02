@@ -84,35 +84,35 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 
 
 //======================<연산자 오버로딩>======================
-Fixed& Fixed::operator=(Fixed const& rhs)
+Fixed& Fixed::operator=(Fixed const& obj)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 
-	if (this != &rhs)
+	if (this != &obj)
 	{
-		this->_value = rhs.getRawBits();
+		this->_value = obj.getRawBits();
 	}
 	return *this;
 }
 
-Fixed Fixed::operator+(Fixed const& rhs) const
+Fixed Fixed::operator+(Fixed const& obj) const
 {
-	return Fixed(this->toFloat() + rhs.toFloat());
+	return Fixed(this->toFloat() + obj.toFloat());
 }
 
-Fixed Fixed::operator-(Fixed const& rhs) const
+Fixed Fixed::operator-(Fixed const& obj) const
 {
-	return Fixed(this->toFloat() - rhs.toFloat());
+	return Fixed(this->toFloat() - obj.toFloat());
 }
 
-Fixed Fixed::operator*(Fixed const& rhs) const
+Fixed Fixed::operator*(Fixed const& obj) const
 {
-	return Fixed(this->toFloat() * rhs.toFloat());
+	return Fixed(this->toFloat() * obj.toFloat());
 }
 
-Fixed Fixed::operator/(Fixed const& rhs) const
+Fixed Fixed::operator/(Fixed const& obj) const
 {
-	return Fixed(this->toFloat() / rhs.toFloat());
+	return Fixed(this->toFloat() / obj.toFloat());
 }
 
 Fixed&		Fixed::operator++(void)
@@ -149,32 +149,32 @@ std::ostream& operator<<(std::ostream &out, const Fixed &c)
 	return out << c.toFloat();
 }
 
-bool	Fixed::operator<(const Fixed &rhs) const
+bool	Fixed::operator<(const Fixed &obj) const
 {
-	return _value == rhs.getRawBits();
+	return _value < obj.getRawBits();
 }
 
-bool	Fixed::operator<=(const Fixed &rhs) const
+bool	Fixed::operator<=(const Fixed &obj) const
 {
-	return _value == rhs.getRawBits();
+	return _value <= obj.getRawBits();
 }
 
-bool	Fixed::operator>(const Fixed &rhs) const
+bool	Fixed::operator>(const Fixed &obj) const
 {
-	return _value == rhs.getRawBits();
+	return _value > obj.getRawBits();
 }
 
-bool	Fixed::operator>=(const Fixed &rhs) const
+bool	Fixed::operator>=(const Fixed &obj) const
 {
-	return _value == rhs.getRawBits();
+	return _value >= obj.getRawBits();
 }
 
-bool	Fixed::operator==(const Fixed &rhs) const
+bool	Fixed::operator==(const Fixed &obj) const
 {
-	return _value == rhs.getRawBits();
+	return _value == obj.getRawBits();
 }
 
-bool	Fixed::operator!=(const Fixed &rhs) const
+bool	Fixed::operator!=(const Fixed &obj) const
 {
-	return _value == rhs.getRawBits();
+	return _value != obj.getRawBits();
 }
