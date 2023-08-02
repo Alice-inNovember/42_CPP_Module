@@ -22,6 +22,7 @@ ScavTrap::ScavTrap(const ScavTrap& src)
 
 ScavTrap::~ScavTrap(void)
 {
+	std::cout << "ScavTrap Distructor calld" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(ScavTrap const& rhs)

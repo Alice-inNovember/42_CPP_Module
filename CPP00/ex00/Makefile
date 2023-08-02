@@ -1,11 +1,11 @@
 #NAME------------------------------------------------------
 NAME				=	megaphone
 #CMDS------------------------------------------------------
-CC					=	c++  -std=c++98
+CXX					=	c++
 RM					=	rm -rf
 LIBC				=	ar rcs
 #FLAGS-----------------------------------------------------
-CFLAGS				=	-Wall -Wextra -Werror
+CXXFLAGS			=	-Wall -Wextra -Werror -std=c++98
 #DIRS------------------------------------------------------
 D_LIBS			=	libs
 D_INCS			=	incs
@@ -31,13 +31,13 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(call P_STAT,$(C_BLE)Compiling)
 
-	@$(CC) $(CFLAGS) -o $@ $^
-	$(call P_STAT,$(C_PLE)megaphone"    "✅)
+	@$(CXX) $(CXXFLAGS) -o $@ $^
+	$(call P_STAT,$(C_PLE)$(NAME)"    "✅)
 
 	$(call P_STAT,$(C_GRN)Done!)
 #OBJS------------------------------------------------------
-%.o : %.c
-	@$(CC) $(CFLAGS) -c $< -o $@ 
+%.o : %.cpp
+	@$(CXX) $(CXXFLAGS) -c $< -o $@ 
 #CLEAN-----------------------------------------------------
 clean :
 	$(call P_STAT,$(C_RED)Cleaning)
@@ -52,7 +52,7 @@ fclean : clean
 	$(call P_STAT,$(C_RED)Removing)
 
 	@$(RM) $(NAME)
-	$(call P_STAT,$(C_PLE)megaphone"    "✅)
+	$(call P_STAT,$(C_PLE)$(NAME)"    "✅)
 
 	$(call P_STAT,$(C_GRN)Done!)
 	$(info )

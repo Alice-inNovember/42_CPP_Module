@@ -5,7 +5,7 @@ CXX		=	c++ -std=c++98
 RM		=	rm -rf
 LIBC	=	ar rcs
 #FLAGS-----------------------------------------------------
-CFLAGS	=	-Wall -Wextra -Werror
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 #DIRS------------------------------------------------------
 D_LIBS	=	libs
 D_INCS	=	incs
@@ -34,13 +34,13 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(call P_STAT,$(C_BLE)Compiling)
 
-	@$(CXX) $(CFLAGS) -o $@ $^
+	@$(CXX) $(CXXFLAGS) -o $@ $^
 	$(call P_STAT,$(C_PLE)$(NAME)"         "✅)
 
 	$(call P_STAT,$(C_GRN)Done!)
 #OBJS------------------------------------------------------
 %.o : %.cpp
-	@$(CXX) $(CFLAGS) -c $< -o $@ 
+	@$(CXX) $(CXXFLAGS) -c $< -o $@ 
 #CLEAN-----------------------------------------------------
 clean :
 	$(call P_STAT,$(C_RED)Cleaning)
