@@ -6,11 +6,11 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:52:37 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 13:33:15 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 14:49:37 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 void Attack(ClapTrap &From, ClapTrap &To)
 {
@@ -20,9 +20,19 @@ void Attack(ClapTrap &From, ClapTrap &To)
 
 int main(void)
 {
-	ClapTrap A("A");
-	ClapTrap B("B");
+	ScavTrap a("a");
+	ScavTrap b("b");
 
-	Attack(A, B);
-	A.attackTo(B);
+	std::cout << "==================================" << std::endl;
+	a.guardGate();
+	b.guardGate();
+	std::cout << "==================================" << std::endl;
+	for (int i = 0; i < 50; i++)
+	{
+		a.attackTo(b);
+	}
+	std::cout << "==================================" << std::endl;
+	a.guardGate();
+	b.guardGate();
+	std::cout << "==================================" << std::endl;
 }

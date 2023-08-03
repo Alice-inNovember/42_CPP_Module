@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 16:03:35 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 13:30:12 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 14:41:19 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ bool ClapTrap::canAction()
 {
 	if (!_ep)
 	{
-		std::cout << "ClapTrap Has Not Enough Energy points to Action" << std::endl;
+		std::cout << "ClapTrap " << _name << " Has Not Enough Energy points to Action" << std::endl;
 		return false;
 	}
 	if (!_hp)
 	{
-		std::cout << "ClapTrap Has Not Enough Hit points to Action" << std::endl;
+		std::cout << "ClapTrap " << _name << " Has Not Enough Hit points to Action" << std::endl;
 		return false;
 	}
 	return true;

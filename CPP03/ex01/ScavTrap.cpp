@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:22:34 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 13:33:40 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 14:49:46 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,3 @@ void ScavTrap::attack(const std::string &target)
 	std::cout	<< "ScavTrap " << _name << " attacks " << target << ", causing " << _ad << " points of damage!" << std::endl;
 	_ep--;
 }
-
-//https://techdebt.tistory.com/39
