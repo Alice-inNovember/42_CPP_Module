@@ -13,6 +13,7 @@ D_INCS	=	incs
 SRCS	=	main.cpp\
 			ClapTrap.cpp\
 			FragTrap.cpp\
+			ScavTrap.cpp\
 			DiamondTrap.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 #COLOR-----------------------------------------------------

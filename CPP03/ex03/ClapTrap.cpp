@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 16:03:35 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 14:41:19 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 16:28:49 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 
 ClapTrap::ClapTrap(const ClapTrap& src)
 {
-	this->_name = src._name;
-	this->_ad = src._ad;
-	this->_ep = src._ep;
-	this->_hp = src._hp;
+	_name = src._name;
+	_ad = src._ad;
+	_ep = src._ep;
+	_hp = src._hp;
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
@@ -40,10 +40,10 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& rhs)
 {
 	if (this != &rhs)
 	{
-		this->_name = rhs._name;
-		this->_ad = rhs._ad;
-		this->_ep = rhs._ep;
-		this->_hp = rhs._hp;
+		_name = rhs._name;
+		_ad = rhs._ad;
+		_ep = rhs._ep;
+		_hp = rhs._hp;
 	}
 	std::cout << "ClapTrap copy operator called" << std::endl;
 	return *this;
