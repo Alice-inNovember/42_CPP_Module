@@ -6,15 +6,21 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 16:03:35 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/28 16:06:08 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 13:32:30 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) {}
+ClapTrap::ClapTrap(void)
+{
+	std::cout << "ClapTrap default constructor called" << std::endl;
+}
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0){}
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
+{
+	std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(const ClapTrap& src)
 {
@@ -22,6 +28,7 @@ ClapTrap::ClapTrap(const ClapTrap& src)
 	this->_ad = src._ad;
 	this->_ep = src._ep;
 	this->_hp = src._hp;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
@@ -38,14 +45,20 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& rhs)
 		this->_ep = rhs._ep;
 		this->_hp = rhs._hp;
 	}
+	std::cout << "ClapTrap copy operator called" << std::endl;
 	return *this;
 }
 
-bool ClapTrap::canAction(int _ep)
+bool ClapTrap::canAction()
 {
-	if (this->_ep < _ep)
+	if (!_ep)
 	{
 		std::cout << "ClapTrap Has Not Enough Energy points to Action" << std::endl;
+		return false;
+	}
+	if (!_hp)
+	{
+		std::cout << "ClapTrap Has Not Enough Hit points to Action" << std::endl;
 		return false;
 	}
 	return true;
@@ -53,10 +66,16 @@ bool ClapTrap::canAction(int _ep)
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (!canAction(1))
+	if (!canAction())
 		return;
 	_ep -= 1;
 	std::cout << "ClapTrap " << _name << " attacks " << target << " causing " << _ad << " points of damage!" << std::endl;
+}
+
+void ClapTrap::attackTo(ClapTrap &obj)
+{
+	attack(obj.getName());
+	obj.takeDamage(_ad);
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -67,25 +86,26 @@ void ClapTrap::takeDamage(unsigned int amount)
 		return;
 	}
 	_hp -= amount;
+	std::cout << "ClapTrap " << _name << " has " << _hp << " HitPoint" << std::endl;
 	if (_hp <= 0)
 		std::cout << "ClapTrap " << _name << " has died" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (!canAction(1))
+	if (!canAction())
 		return;
 	_ep -= 1;
 	_hp += amount;
 	std::cout << " ClapTrap " << _name << " Repaired him self " << amount << "HitPoints" << std::endl;
 }
 
-std::string const ClapTrap::name() const
+std::string const ClapTrap::getName() const
 {
 	return _name;
 }
 
-int ClapTrap::ad() const
+int ClapTrap::getAd() const
 {
 	return _ad;
 }

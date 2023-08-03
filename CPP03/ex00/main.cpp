@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:52:37 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/28 16:06:35 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 13:32:59 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void Attack(ClapTrap &From, ClapTrap &To)
 {
-	From.attack(To.name());
-	To.takeDamage(From.ad());
+	From.attack(To.getName());
+	To.takeDamage(From.getAd());
 }
 
 int main(void)
@@ -24,4 +24,5 @@ int main(void)
 	ClapTrap B("B");
 
 	Attack(A, B);
+	A.attackTo(B);
 }

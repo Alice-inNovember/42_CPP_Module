@@ -1,13 +1,26 @@
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 13:22:31 by junlee2           #+#    #+#             */
+/*   Updated: 2023/08/03 13:36:20 by junlee2          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ScavTrap_HPP
+# define ScavTrap_HPP
 
 # include <iostream>
 # include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
-	public:
+	private:
 	ScavTrap(void);
+	public:
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap& obj);
 	ScavTrap& operator=(const ScavTrap& obj);
