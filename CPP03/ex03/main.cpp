@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:52:37 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 16:30:56 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 18:58:25 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void Attack(ClapTrap &From, ClapTrap &To)
 
 int main(void)
 {
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 	{
 		ClapTrap A("A");
 		ClapTrap B("B");
@@ -28,7 +28,7 @@ int main(void)
 		Attack(A, B);
 		A.attackTo(B);
 	}
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 	{
 		ScavTrap a("a");
 		ScavTrap b("b");
@@ -42,7 +42,7 @@ int main(void)
 		a.guardGate();
 		b.guardGate();
 	}
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 	{
 		FragTrap a("a");
 		FragTrap b("b");
@@ -50,11 +50,11 @@ int main(void)
 		a.highFivesGuys();
 		b.highFivesGuys();
 	}
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 	{
 		DiamondTrap dia("dia");
 
 		dia.whoAmI();
 	}
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 }

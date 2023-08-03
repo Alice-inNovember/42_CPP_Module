@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:22:31 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 14:55:50 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 18:38:12 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
-	private:
+	protected:
 	FragTrap(void);
 	public:
 	FragTrap(std::string name);

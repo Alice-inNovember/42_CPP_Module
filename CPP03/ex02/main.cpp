@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:52:37 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 14:59:35 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 18:36:48 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int main(void)
 	FragTrap a("a");
 	FragTrap b("b");
 
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 	a.highFivesGuys();
 	b.highFivesGuys();
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 }

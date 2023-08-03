@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:22:31 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 14:49:37 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 18:38:03 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
-	private:
+	protected:
 	ScavTrap(void);
 	public:
 	ScavTrap(std::string name);

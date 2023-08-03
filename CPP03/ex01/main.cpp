@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:52:37 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 14:49:37 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/03 18:36:48 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ int main(void)
 	ScavTrap a("a");
 	ScavTrap b("b");
 
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 	a.guardGate();
 	b.guardGate();
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 	for (int i = 0; i < 50; i++)
 	{
 		a.attackTo(b);
 	}
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 	a.guardGate();
 	b.guardGate();
-	std::cout << "==================================" << std::endl;
+	std::cout << "==================================" << NONE << std::endl;
 }
