@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:59:54 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/08 19:29:21 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 20:23:06 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define Cat_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 #define CAT "Cat"
 #define CATSOUND "Meow~"
@@ -21,6 +22,8 @@
 class Cat : public Animal
 {
    private:
+	Brain* brain;
+
    public:
 	Cat(void);
 	Cat(const Cat& src);

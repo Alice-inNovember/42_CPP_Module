@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 19:01:28 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/08 19:42:05 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 20:29:35 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 Cat::Cat(void)
 {
 	type = CAT;
+	brain = new Brain;
 	std::cout << "Created " << CAT << std::endl;
 }
 
@@ -27,6 +28,7 @@ Cat::Cat(const Cat& src)
 
 Cat::~Cat(void)
 {
+	delete brain;
 	std::cout << "Destroyed " << CAT << std::endl;
 }
 
@@ -34,6 +36,7 @@ Cat& Cat::operator=(Cat const& obj)
 {
 	if (this != &obj) {
 		type = obj.type;
+		brain = obj.brain;
 	}
 	std::cout << "Copyed " << CAT << std::endl;
 	return *this;

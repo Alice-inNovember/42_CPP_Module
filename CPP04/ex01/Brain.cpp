@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 19:01:35 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/08 20:23:03 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/08/08 20:07:28 by junlee2           #+#    #+#             */
+/*   Updated: 2023/08/08 21:07:10 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Dog_HPP
-#define Dog_HPP
-
-#include "Animal.hpp"
 #include "Brain.hpp"
 
-#define DOG "Dog"
-#define DOGSOUND "Bark!"
+Brain::Brain(void) {}
 
-class Dog : public Animal
+Brain::Brain(const Brain& src) {}
+
+Brain::~Brain(void) {}
+
+Brain& Brain::operator=(Brain const& obj)
 {
-   private:
-	Brain* brain;
-
-   public:
-	Dog(void);
-	Dog(const Dog& src);
-	virtual ~Dog(void);
-	Dog& operator=(Dog const& obj);
-	void makeSound() const;
-};
-
-#endif
+	if (this != &obj) {
+		for (int i = 0; i < size; i++) {
+			ideas[i] = obj.ideas[i];
+		}
+	}
+	return *this;
+}
