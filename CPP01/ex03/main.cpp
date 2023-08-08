@@ -6,14 +6,14 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:18:59 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/10 12:54:12 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:41:54 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib>
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 #include "Weapon.hpp"
-#include <cstdlib>
 
 int main()
 {

@@ -6,15 +6,15 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:28:17 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/14 15:59:22 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:41:32 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	Zombie::announce(void)
+void Zombie::announce(void)
 {
-	std::cout << name << ": : BraiiiiiiinnnzzzZ.."<< std::endl;
+	std::cout << name << ": : BraiiiiiiinnnzzzZ.." << std::endl;
 }
 
 Zombie::Zombie(std::string name)

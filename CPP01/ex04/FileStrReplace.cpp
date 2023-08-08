@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FileStrReplace.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42seoul.kr    +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:03:20 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/26 04:34:48 by codespace        ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:42:01 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FileStringReplace::FileStringReplace(std::string inFileName)
 	if (!inFile.is_open())
 		return;
 	//파일의 마지막으로 이동
-	inFile.seekg(0,std::ios::end);
+	inFile.seekg(0, std::ios::end);
 	//마지막 위치를 저장 (파일의 크기)
 	inFileLen = inFile.tellg();
 	//파일 크기만큼 string 크기 늘리기
@@ -32,9 +32,10 @@ FileStringReplace::FileStringReplace(std::string inFileName)
 	inFile.close();
 }
 
-void FileStringReplace::ReplaceStr(std::string outFileName, std::string toFind, std::string toChange)
+void FileStringReplace::ReplaceStr(std::string outFileName, std::string toFind,
+								   std::string toChange)
 {
-	size_t		previous = 0;
+	size_t previous = 0;
 
 	this->outFileName = inFileName + outFileName;
 	this->toFind = toFind;
@@ -45,8 +46,7 @@ void FileStringReplace::ReplaceStr(std::string outFileName, std::string toFind, 
 		return;
 	std::string::size_type pos;
 	pos = inFileText.find(toFind);
-	while(pos != std::string::npos)
-	{
+	while (pos != std::string::npos) {
 		outFile << inFileText.substr(previous, pos - previous);
 		outFile << toChange;
 		previous = pos + toFind.length();

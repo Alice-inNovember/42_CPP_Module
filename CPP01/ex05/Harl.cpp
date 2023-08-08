@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 13:10:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/18 13:25:58 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:42:08 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,47 +24,54 @@ Harl::Harl()
 	complainList[ERROR].func_ptr = &Harl::error;
 }
 
-void	Harl::debug( void )
+void Harl::debug(void)
 {
 	std::cout << "[ DEBUG ]" << std::endl
-		<< "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger" << std::endl
-		<< "I really do!" << std::endl
-		<< std::endl;
+			  << "I love having extra bacon for my "
+				 "7XL-double-cheese-triple-pickle-special-ketchup burger"
+			  << std::endl
+			  << "I really do!" << std::endl
+			  << std::endl;
 }
 
-void	Harl::info( void )
+void Harl::info(void)
 {
 	std::cout << "[ INFO ]" << std::endl
-		<< "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger!" << std::endl
-		<< "If you did, I wouldn’t be asking for more!" << std::endl
-		<< std::endl;
+			  << "I cannot believe adding extra bacon costs more money. You "
+				 "didn’t put enough bacon in my burger!"
+			  << std::endl
+			  << "If you did, I wouldn’t be asking for more!" << std::endl
+			  << std::endl;
 }
 
-void	Harl::warning( void )
+void Harl::warning(void)
 {
 	std::cout << "[ WARNING ]" << std::endl
-		<< "I think I deserve to have some extra bacon for free." << std::endl
-		<< "I’ve been coming for years whereas you started working here since last month."
-		<< std::endl << std::endl;
+			  << "I think I deserve to have some extra bacon for free."
+			  << std::endl
+			  << "I’ve been coming for years whereas you started working here "
+				 "since last month."
+			  << std::endl
+			  << std::endl;
 }
 
-void	Harl::error( void )
+void Harl::error(void)
 {
 	std::cout << "[ ERROR ]" << std::endl
-		<< "This is unacceptable! I want to speak to the manager now"
-		<< std::endl << std::endl;
+			  << "This is unacceptable! I want to speak to the manager now"
+			  << std::endl
+			  << std::endl;
 }
 
-void	Harl::complain( std::string level )
+void Harl::complain(std::string level)
 {
-	for (int i = 0; i < TOTAL_NUM_OF_LEVEL; i++)
-	{
-		if (complainList[i].level == level)
-		{
+	for (int i = 0; i < TOTAL_NUM_OF_LEVEL; i++) {
+		if (complainList[i].level == level) {
 			(this->*complainList[i].func_ptr)();
-			return ;
+			return;
 		}
 	}
 	std::cout << "[ Probably complaining about insignificant problems ]"
-		<< std::endl << std::endl;
+			  << std::endl
+			  << std::endl;
 }

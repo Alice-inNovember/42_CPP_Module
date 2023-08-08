@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
+#include <malloc/_malloc.h>
 #include <cmath>
 #include <iostream>
-#include <malloc/_malloc.h>
 #include <ostream>
 
 //======================<생성자>======================
@@ -82,14 +82,12 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 		return b;
 }
 
-
 //======================<연산자 오버로딩>======================
 Fixed& Fixed::operator=(Fixed const& obj)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 
-	if (this != &obj)
-	{
+	if (this != &obj) {
 		this->_value = obj.getRawBits();
 	}
 	return *this;
@@ -115,19 +113,19 @@ Fixed Fixed::operator/(Fixed const& obj) const
 	return Fixed(this->toFloat() / obj.toFloat());
 }
 
-Fixed&		Fixed::operator++(void)
+Fixed& Fixed::operator++(void)
 {
 	this->_value += 1;
 	return (*this);
 }
 
-Fixed&		Fixed::operator--(void)
+Fixed& Fixed::operator--(void)
 {
 	this->_value -= 1;
 	return (*this);
 }
 
-const Fixed	Fixed::operator++(int)
+const Fixed Fixed::operator++(int)
 {
 	const Fixed temp(this->toFloat());
 
@@ -135,7 +133,7 @@ const Fixed	Fixed::operator++(int)
 	return temp;
 }
 
-const Fixed	Fixed::operator--(int)
+const Fixed Fixed::operator--(int)
 {
 	const Fixed temp(this->toFloat());
 
@@ -143,38 +141,37 @@ const Fixed	Fixed::operator--(int)
 	return temp;
 }
 
-
-std::ostream& operator<<(std::ostream &out, const Fixed &c)
+std::ostream& operator<<(std::ostream& out, const Fixed& c)
 {
 	return out << c.toFloat();
 }
 
-bool	Fixed::operator<(const Fixed &obj) const
+bool Fixed::operator<(const Fixed& obj) const
 {
 	return _value < obj.getRawBits();
 }
 
-bool	Fixed::operator<=(const Fixed &obj) const
+bool Fixed::operator<=(const Fixed& obj) const
 {
 	return _value <= obj.getRawBits();
 }
 
-bool	Fixed::operator>(const Fixed &obj) const
+bool Fixed::operator>(const Fixed& obj) const
 {
 	return _value > obj.getRawBits();
 }
 
-bool	Fixed::operator>=(const Fixed &obj) const
+bool Fixed::operator>=(const Fixed& obj) const
 {
 	return _value >= obj.getRawBits();
 }
 
-bool	Fixed::operator==(const Fixed &obj) const
+bool Fixed::operator==(const Fixed& obj) const
 {
 	return _value == obj.getRawBits();
 }
 
-bool	Fixed::operator!=(const Fixed &obj) const
+bool Fixed::operator!=(const Fixed& obj) const
 {
 	return _value != obj.getRawBits();
 }

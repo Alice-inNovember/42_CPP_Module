@@ -6,13 +6,13 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:22:34 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 19:21:25 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:42:43 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) //private
+ScavTrap::ScavTrap(void)	//private
 {
 	std::cout << SCAV << CREATE << " ScavTrap " << _name << NONE << std::endl;
 }
@@ -23,10 +23,11 @@ ScavTrap::ScavTrap(std::string name)
 	_hp = 100;
 	_ep = 50;
 	_ad = 20;
-	std::cout << SCAV << CREATE << " ScavTrap " << _name << CREATE << NONE << std::endl;
+	std::cout << SCAV << CREATE << " ScavTrap " << _name << CREATE << NONE
+			  << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& obj) 
+ScavTrap::ScavTrap(const ScavTrap& obj)
 {
 	_name = obj._name;
 	_ad = obj._ad;
@@ -35,7 +36,7 @@ ScavTrap::ScavTrap(const ScavTrap& obj)
 	std::cout << SCAV << CRECOPY << " ScavTrap " << _name << NONE << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& obj) 
+ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
 {
 	_name = obj._name;
 	_ad = obj._ad;
@@ -45,7 +46,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
 	return (*this);
 }
 
-ScavTrap::~ScavTrap(void) 
+ScavTrap::~ScavTrap(void)
 {
 	std::cout << SCAV << DISTROY << " ScavTrap " << _name << NONE << std::endl;
 }
@@ -54,14 +55,17 @@ void ScavTrap::guardGate(void)
 {
 	if (!canAction())
 		return;
-	std::cout << SCAV << "ScavTrap " << _name << " has entered gate guard mode" << NONE << std::endl;
+	std::cout << SCAV << "ScavTrap " << _name << " has entered gate guard mode"
+			  << NONE << std::endl;
 	_ep--;
 }
 
-void ScavTrap::attack(const std::string &target)
+void ScavTrap::attack(const std::string& target)
 {
 	if (!canAction())
 		return;
-	std::cout << SCAV << "ScavTrap " << _name << " attacks " << target << ", causing " << _ad << " points of damage!" << NONE << std::endl;
+	std::cout << SCAV << "ScavTrap " << _name << " attacks " << target
+			  << ", causing " << _ad << " points of damage!" << NONE
+			  << std::endl;
 	_ep--;
 }

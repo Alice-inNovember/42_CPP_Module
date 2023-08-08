@@ -6,14 +6,14 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 13:08:49 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/26 15:43:44 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:44:25 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef KAREN_HPP
-# define KAREN_HPP
+#define KAREN_HPP
 
-# include <iostream>
+#include <iostream>
 
 enum level
 {
@@ -28,21 +28,22 @@ class Harl;
 
 typedef struct s_complain
 {
-	std::string	level;
+	std::string level;
 	void (Harl::*func_ptr)(void);
 } t_complain;
 
-class Harl {
+class Harl
+{
 
-private:
-	t_complain	complainList[TOTAL_NUM_OF_LEVEL];
+   private:
+	t_complain complainList[TOTAL_NUM_OF_LEVEL];
 	void complainSwitch(int i);
 	void debug(void);
 	void info(void);
 	void warning(void);
 	void error(void);
 
-public:
+   public:
 	Harl(void);
 	void complain(std::string level);
 };

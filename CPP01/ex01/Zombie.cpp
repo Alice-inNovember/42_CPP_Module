@@ -6,18 +6,18 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:28:17 by junlee2           #+#    #+#             */
-/*   Updated: 2023/06/27 16:55:58 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:41:37 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	Zombie::announce(void)
+void Zombie::announce(void)
 {
-	std::cout << name << "." << idx << " : BraiiiiiiinnnzzzZ.."<< std::endl;
+	std::cout << name << "." << idx << " : BraiiiiiiinnnzzzZ.." << std::endl;
 }
 
-void	Zombie::initialize(int idx, std::string name)
+void Zombie::initialize(int idx, std::string name)
 {
 	this->idx = idx;
 	this->name = name;
@@ -32,5 +32,6 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-	std::cout << name << "." << idx << "(Zombie" << ") has died" << std::endl;
+	std::cout << name << "." << idx << "(Zombie"
+			  << ") has died" << std::endl;
 }

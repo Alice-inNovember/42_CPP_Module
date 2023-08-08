@@ -6,13 +6,13 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:22:34 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/03 19:21:05 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:42:50 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) //private
+FragTrap::FragTrap(void)	//private
 {
 	std::cout << FRAG << CREATE << " FragTrap " << NONE << std::endl;
 }
@@ -26,7 +26,7 @@ FragTrap::FragTrap(std::string name)
 	std::cout << FRAG << CREATE << " FragTrap " << _name << NONE << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& obj) 
+FragTrap::FragTrap(const FragTrap& obj)
 {
 	_name = obj._name;
 	_ad = obj._ad;
@@ -35,7 +35,7 @@ FragTrap::FragTrap(const FragTrap& obj)
 	std::cout << FRAG << CRECOPY << " FragTrap " << _name << NONE << std::endl;
 }
 
-FragTrap& FragTrap::operator=(const FragTrap& obj) 
+FragTrap& FragTrap::operator=(const FragTrap& obj)
 {
 	_name = obj._name;
 	_ad = obj._ad;
@@ -45,12 +45,13 @@ FragTrap& FragTrap::operator=(const FragTrap& obj)
 	return (*this);
 }
 
-FragTrap::~FragTrap(void) 
+FragTrap::~FragTrap(void)
 {
 	std::cout << FRAG << DISTROY << " FragTrap " << _name << NONE << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << FRAG << _name << " : Hooray! Give Me Five!" << NONE << std::endl;
+	std::cout << FRAG << _name << " : Hooray! Give Me Five!" << NONE
+			  << std::endl;
 }

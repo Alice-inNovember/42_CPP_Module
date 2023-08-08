@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
+#include <malloc/_malloc.h>
 #include <cmath>
 #include <iostream>
-#include <malloc/_malloc.h>
 
 //======================<생성자>======================
 Fixed::Fixed(void) : _value(0)
@@ -18,7 +18,7 @@ Fixed::Fixed(int val)
 Fixed::Fixed(float val)
 {
 	std::cout << "Float constructor called" << std::endl;
-	_value = roundf (val * (1 << _point));
+	_value = roundf(val * (1 << _point));
 }
 
 Fixed::Fixed(const Fixed& src)
@@ -54,14 +54,13 @@ Fixed& Fixed::operator=(Fixed const& obj)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 
-	if (this != &obj)
-	{
+	if (this != &obj) {
 		this->_value = obj.getRawBits();
 	}
 	return *this;
 }
 
-std::ostream& operator<<(std::ostream &out, const Fixed &c)
+std::ostream& operator<<(std::ostream& out, const Fixed& c)
 {
 	return out << c.toFloat();
 }

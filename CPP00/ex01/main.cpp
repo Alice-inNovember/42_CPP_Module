@@ -6,28 +6,27 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 10:56:13 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/18 14:23:06 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:40:20 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdio>
+#include <iomanip>
 #include <iostream>
 #include <string>
-#include <iomanip>
+
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
-std::string	get_input(std::string say)
+std::string get_input(std::string say)
 {
 	std::string input;
 
-	while(1)
-	{
+	while (1) {
 		std::cout << std::endl;
 		std::cout << say << " : ";
 		std::getline(std::cin, input);
-		if(std::cin.eof())
-		{
+		if (std::cin.eof()) {
 			std::cin.clear();
 			std::clearerr(stdin);
 			std::cout << "You have entered wrong input" << std::endl;
@@ -38,28 +37,25 @@ std::string	get_input(std::string say)
 	return input;
 }
 
-void	add(PhoneBook *phonebook)
+void add(PhoneBook* phonebook)
 {
 	std::cout << std::endl;
-	phonebook->add_contact(\
-	get_input("first_name"), \
-	get_input("last_name"), \
-	get_input("nick_name"), \
-	get_input("number"), \
-	get_input("secret"));
+	phonebook->add_contact(get_input("first_name"), get_input("last_name"),
+						   get_input("nick_name"), get_input("number"),
+						   get_input("secret"));
 }
 
-void	printer(const std::string &str)
+void printer(const std::string& str)
 {
-	if(str.length() == 0)
+	if (str.length() == 0)
 		std::cout << std::setw(10) << std::right << "None";
-	else if(str.length() <= 10)
+	else if (str.length() <= 10)
 		std::cout << std::setw(10) << std::right << str;
 	else
-		std::cout  << std::setw(9) << std::right << str.substr(0, 9) << ".";
+		std::cout << std::setw(9) << std::right << str.substr(0, 9) << ".";
 }
 
-void	print_contact_idx(Contact *contact, int idx)
+void print_contact_idx(Contact* contact, int idx)
 {
 	std::cout.width(10);
 	std::cout << std::right << idx + 1;
@@ -72,7 +68,7 @@ void	print_contact_idx(Contact *contact, int idx)
 	std::cout << std::endl;
 }
 
-void	print_contact(Contact *contact)
+void print_contact(Contact* contact)
 {
 	std::cout << "First name : " << contact->get_first_name() << std::endl;
 	std::cout << "Last  name : " << contact->get_last_name() << std::endl;
@@ -81,30 +77,26 @@ void	print_contact(Contact *contact)
 	std::cout << "Secret     : " << contact->get_secret() << std::endl;
 }
 
-void	search(PhoneBook *phonebook)
+void search(PhoneBook* phonebook)
 {
-	int	input;
+	int input;
 
 	std::cout << std::endl;
 	for (int i = 0; i < 8; i++)
 		print_contact_idx(phonebook->find_contact(i), i);
-	while(true)
-	{
+	while (true) {
 		std::cout << "===================" << std::endl;
 		std::cout << "[0]\texit" << std::endl;
 		std::cout << "[1 ~ 8]\tinfo" << std::endl;
 		std::cout << "===================" << std::endl;
 		std::cout << "input : ";
 		std::cin >> input;
-		if(std::cin.fail())
-		{
+		if (std::cin.fail()) {
 			std::cin.clear();
 			std::cin.ignore();
 			std::cout << "You have entered wrong input" << std::endl;
 			continue;
-		}
-		else if (std::cin.eof())
-		{
+		} else if (std::cin.eof()) {
 			std::cin.clear();
 			std::clearerr(stdin);
 			continue;
@@ -112,8 +104,7 @@ void	search(PhoneBook *phonebook)
 		std::cin.ignore();
 		if (input == 0)
 			return;
-		else if(input > 0 && input <= 8)
-		{
+		else if (input > 0 && input <= 8) {
 			print_contact(phonebook->find_contact(input - 1));
 			std::cout << std::endl;
 			continue;
@@ -122,12 +113,11 @@ void	search(PhoneBook *phonebook)
 	}
 }
 
-void	Menu(PhoneBook *phonebook)
+void Menu(PhoneBook* phonebook)
 {
 	std::string input;
 
-	while(true)
-	{
+	while (true) {
 		std::cout << "==== Main Menu ====" << std::endl;
 		std::cout << "ADD" << std::endl;
 		std::cout << "SEARCH" << std::endl;
@@ -135,8 +125,7 @@ void	Menu(PhoneBook *phonebook)
 		std::cout << "===================" << std::endl;
 		std::cout << "input : ";
 		std::getline(std::cin, input);
-		if(std::cin.eof())
-		{
+		if (std::cin.eof()) {
 			std::cin.clear();
 			std::clearerr(stdin);
 			std::cout << "You have entered wrong input" << std::endl;
@@ -148,8 +137,7 @@ void	Menu(PhoneBook *phonebook)
 			search(phonebook);
 		else if (input == "EXIT")
 			return;
-		else
-		{
+		else {
 			std::cout << "You have entered wrong input" << std::endl;
 			continue;
 		}

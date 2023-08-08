@@ -6,23 +6,20 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 10:12:31 by junlee2           #+#    #+#             */
-/*   Updated: 2023/07/18 14:18:23 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/08 17:39:46 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int main(int ac, char **av)
+int main(int ac, char** av)
 {
-	if (ac == 1)
-	{
+	if (ac == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return(0);
+		return (0);
 	}
-	for (int i = 1; i < ac; i++)
-	{
-		for (int idx = 0; av[i][idx]; idx++)
-		{
+	for (int i = 1; i < ac; i++) {
+		for (int idx = 0; av[i][idx]; idx++) {
 			std::cout << (char)std::toupper(av[i][idx]);
 		}
 		if (i != ac - 1)
