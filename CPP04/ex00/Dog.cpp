@@ -1,50 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 15:56:55 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/08 19:42:12 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/08/08 19:01:33 by junlee2           #+#    #+#             */
+/*   Updated: 2023/08/08 19:42:00 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 #include <iostream>
 
-Animal::Animal(void)
+Dog::Dog(void)
 {
-	type = ANIMAL;
-	std::cout << "Created " << ANIMAL << std::endl;
+	type = DOG;
+	std::cout << "Created " << DOG << std::endl;
 }
 
-Animal::Animal(const Animal& src)
+Dog::Dog(const Dog& src)
 {
 	type = src.type;
-	std::cout << "Copy Created " << ANIMAL << std::endl;
+	std::cout << "Copy Created " << DOG << std::endl;
 }
 
-Animal::~Animal(void)
+Dog::~Dog(void)
 {
-	std::cout << "Destroyed " << ANIMAL << std::endl;
+	std::cout << "Destroyed " << DOG << std::endl;
 }
 
-Animal& Animal::operator=(Animal const& obj)
+Dog& Dog::operator=(Dog const& obj)
 {
 	if (this != &obj) {
 		type = obj.type;
 	}
-	std::cout << "Copyed " << ANIMAL << std::endl;
+	std::cout << "Copyed " << DOG << std::endl;
 	return *this;
 }
 
-std::string const Animal::getType() const
+void Dog::makeSound() const
 {
-	return type;
-}
-
-void Animal::makeSound() const
-{
-	std::cout << type << " : " << ANIMALSOUND << std::endl;
+	std::cout << type << " : " << DOGSOUND << std::endl;
 }
