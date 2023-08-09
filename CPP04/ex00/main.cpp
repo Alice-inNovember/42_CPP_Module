@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 19:16:31 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/08 19:40:01 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/09 12:59:07 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 		const Animal* i = new Cat();
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
-		i->makeSound();	   //will output the cat sound!
+		i->makeSound();	   //Cat sound
 		j->makeSound();
 		meta->makeSound();
 
@@ -36,10 +36,10 @@ int main()
 		const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* i = new WrongCat();
 		std::cout << i->getType() << " " << std::endl;
-		i->makeSound();	   //will output the WrongAnimal sound!
+		i->makeSound();	   //WrongAnimal sound
 		meta->makeSound();
-
 		delete i;
+		system("Leaks ex00");
 	}
 	return 0;
 }

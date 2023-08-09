@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 19:16:31 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/09 12:57:30 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/09 13:29:28 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 
 int main()
 {
+	// AAnimal animal;
 	std::cout << "==============================" << std::endl;
 	{
-		Animal* animals[10];
+		AAnimal* animals[10];
 
 		for (int i = 0; i < 5; i++) {
 			animals[i] = new Dog;
@@ -48,6 +49,6 @@ int main()
 		b.talkIdeas();
 	}
 	std::cout << "==============================" << std::endl;
-	//system("Leaks ex01");
+	//system("Leaks ex02");
 	return 0;
 }

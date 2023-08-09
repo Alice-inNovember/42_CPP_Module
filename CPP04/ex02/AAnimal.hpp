@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 15:56:52 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/09 13:00:15 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/09 13:29:15 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WrongAnimal_HPP
-#define WrongAnimal_HPP
+#ifndef AAnimal_HPP
+#define AAnimal_HPP
 
-#define WRONGANIMAL "WrongAnimal"
-#define WRONGANIMALSOUND ""
+#define AANIMAL "AAnimal"
+#define AANIMALSOUND ""
 
 #include "string"
 
-class WrongAnimal
+class AAnimal
 {
    protected:
 	std::string type;
+	AAnimal(void);
+	AAnimal(const AAnimal& src);
 
    public:
-	WrongAnimal(void);
-	WrongAnimal(const WrongAnimal& src);
-	virtual ~WrongAnimal(void);
-	WrongAnimal& operator=(WrongAnimal const& obj);
+	virtual ~AAnimal(void);
+	AAnimal& operator=(AAnimal const& obj);
 
 	std::string const getType() const;
-	void makeSound() const;
+	virtual void makeSound() const = 0;
 };
 
 #endif

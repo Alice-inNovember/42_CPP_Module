@@ -1,50 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 15:56:55 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/09 11:27:56 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/08/09 12:25:07 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include <iostream>
+#include "AAnimal.hpp"
 
-Animal::Animal(void)
+AAnimal::AAnimal(void)
 {
-	type = ANIMAL;
-	std::cout << "Created " << ANIMAL << std::endl;
+	type = AANIMAL;
+	std::cout << "Created " << AANIMAL << std::endl;
 }
 
-Animal::Animal(const Animal& src)
+AAnimal::AAnimal(const AAnimal& src)
 {
 	*this = src;
-	std::cout << "Copy Created " << ANIMAL << std::endl;
+	std::cout << "Copy Created " << AANIMAL << std::endl;
 }
 
-Animal::~Animal(void)
+AAnimal::~AAnimal(void)
 {
-	std::cout << "Destroyed " << ANIMAL << std::endl;
+	std::cout << "Destroyed " << AANIMAL << std::endl;
 }
 
-Animal& Animal::operator=(Animal const& obj)
+AAnimal& AAnimal::operator=(AAnimal const& obj)
 {
 	if (this != &obj) {
 		type = obj.type;
 	}
-	std::cout << "Copyed " << ANIMAL << std::endl;
+	std::cout << "Copyed " << AANIMAL << std::endl;
 	return *this;
 }
 
-std::string const Animal::getType() const
+std::string const AAnimal::getType() const
 {
 	return type;
-}
-
-void Animal::makeSound() const
-{
-	std::cout << type << " : " << ANIMALSOUND << std::endl;
 }

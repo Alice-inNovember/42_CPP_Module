@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 15:56:52 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/09 13:00:15 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/08/08 19:01:35 by junlee2           #+#    #+#             */
+/*   Updated: 2023/08/09 12:25:43 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WrongAnimal_HPP
-#define WrongAnimal_HPP
+#ifndef Dog_HPP
+#define Dog_HPP
 
-#define WRONGANIMAL "WrongAnimal"
-#define WRONGANIMALSOUND ""
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-#include "string"
+#define DOG "Dog"
+#define DOGSOUND "Bark!"
 
-class WrongAnimal
+class Dog : public AAnimal
 {
-   protected:
-	std::string type;
+   private:
+	Brain* brain;
 
    public:
-	WrongAnimal(void);
-	WrongAnimal(const WrongAnimal& src);
-	virtual ~WrongAnimal(void);
-	WrongAnimal& operator=(WrongAnimal const& obj);
-
-	std::string const getType() const;
+	Dog(void);
+	Dog(const Dog& src);
+	virtual ~Dog(void);
+	Dog& operator=(Dog const& obj);
 	void makeSound() const;
+	void brainStorm(std::string idea);
+	void talkIdeas();
 };
 
 #endif

@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 15:56:52 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/09 13:00:15 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/08/08 18:59:54 by junlee2           #+#    #+#             */
+/*   Updated: 2023/08/09 12:25:35 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WrongAnimal_HPP
-#define WrongAnimal_HPP
+#ifndef Cat_HPP
+#define Cat_HPP
 
-#define WRONGANIMAL "WrongAnimal"
-#define WRONGANIMALSOUND ""
+#include <string>
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-#include "string"
+#define CAT "Cat"
+#define CATSOUND "Meow~"
 
-class WrongAnimal
+class Cat : public AAnimal
 {
-   protected:
-	std::string type;
+   private:
+	Brain* brain;
 
    public:
-	WrongAnimal(void);
-	WrongAnimal(const WrongAnimal& src);
-	virtual ~WrongAnimal(void);
-	WrongAnimal& operator=(WrongAnimal const& obj);
-
-	std::string const getType() const;
+	Cat(void);
+	Cat(const Cat& src);
+	virtual ~Cat(void);
+	Cat& operator=(Cat const& obj);
 	void makeSound() const;
+	void brainStorm(std::string idea);
+	void talkIdeas();
 };
 
 #endif

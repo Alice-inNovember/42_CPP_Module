@@ -1,59 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 19:01:28 by junlee2           #+#    #+#             */
-/*   Updated: 2023/08/09 12:13:36 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/08/08 19:01:33 by junlee2           #+#    #+#             */
+/*   Updated: 2023/08/09 12:13:42 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 #include <iostream>
 
-Cat::Cat(void)
+Dog::Dog(void)
 {
-	type = CAT;
+	type = DOG;
 	brain = new Brain;
-	std::cout << "Created " << CAT << std::endl;
+	std::cout << "Created " << DOG << std::endl;
 }
 
-Cat::Cat(const Cat& src)
+Dog::Dog(const Dog& src)
 {
 	brain = new Brain;
 	*this = src;
-	std::cout << "Copy Created " << CAT << std::endl;
+	std::cout << "Copy Created " << DOG << std::endl;
 }
 
-Cat::~Cat(void)
+Dog::~Dog(void)
 {
 	delete brain;
-	std::cout << "Destroyed " << CAT << std::endl;
+	std::cout << "Destroyed " << DOG << std::endl;
 }
 
-Cat& Cat::operator=(Cat const& obj)
+Dog& Dog::operator=(Dog const& obj)
 {
 	if (this != &obj) {
 		type = obj.type;
 		*brain = *obj.brain;
 	}
-	std::cout << "Copyed " << CAT << std::endl;
+	std::cout << "Copyed " << DOG << std::endl;
 	return *this;
 }
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << type << " : " << CATSOUND << std::endl;
+	std::cout << type << " : " << DOGSOUND << std::endl;
 }
 
-void Cat::brainStorm(std::string idea)
+void Dog::brainStorm(std::string idea)
 {
 	brain->addIdea(idea);
 }
 
-void Cat::talkIdeas()
+void Dog::talkIdeas()
 {
 	std::cout << type << " : ";
 	brain->printIdea();
